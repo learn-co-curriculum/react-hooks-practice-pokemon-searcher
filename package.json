@@ -1,22 +1,35 @@
 {
-  "name": "pokemon-searcher",
+  "name": "react-hooks-practice-pokemon-searcher",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "json-server": "^0.12.2",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4",
-    "semantic-ui-css": "^2.3.1",
-    "semantic-ui-react": "^0.77.0"
-  },
-  "scripts": {
-    "start": "json-server --watch db.json & PORT=3001 react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.1"
   },
   "devDependencies": {
-    "concurrently": "^3.5.1"
+    "json-server": "^0.15.1"
+  },
+  "scripts": {
+    "start": "json-server --watch db.json -p 3001 & open http://localhost:3001/pokemon & react-scripts start && fg"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
