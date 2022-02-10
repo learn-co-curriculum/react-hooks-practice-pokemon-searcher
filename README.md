@@ -44,8 +44,8 @@ can pass data to each other as well as where that information should be stored.
 For the most part, the framework for this application is already made, with a
 simple json server, and a React app, with all the components needed. When you
 run `npm start` a json server will spin up and you can access the Pokemon info
-at `http://localhost:3000/pokemon`, and your React application will also start,
-on port 3001.
+at `http://localhost:3001/pokemon`, and your React application will also start,
+on port 3000.
 
 Given a list of deliverables, our goal is to navigate the existing code base and
 implement several new features. Take some time to familiarize yourself with the
