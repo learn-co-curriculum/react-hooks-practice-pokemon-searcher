@@ -6,7 +6,7 @@
 
 ## Setup
 
-All the Pokemon information about can be found in the `db.json` file. We'll
+All the information about Pokemon can be found in the `db.json` file. We'll
 be using `json-server` to create a RESTful API for our database.
 
 Run `npm install` to install our dependencies.
