@@ -1,14 +1,13 @@
 import React from "react";
 
-function Search({ pokemon, search, onSearch}) {
+function Search({ search, onSearch }) {
 
-  //what are you doing with this data?
-  //start from the bottom 
+  
 
   return (
     <div className="ui search">
       <div className="ui icon input">
-        <input className="prompt" value={search} onChange={onSearch}/>
+        <input type="text" className="prompt" onChange={(e) => onSearch(e.target.value)} value={search}/>
         <i className="search icon" />
       </div>
     </div>

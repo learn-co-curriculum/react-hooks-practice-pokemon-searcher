@@ -1,30 +1,27 @@
 import React,{useState} from "react";
 import { Card } from "semantic-ui-react";
 
-function PokemonCard({ pokemon }) {
+function PokemonCard({ poke }) {
 const [truthy, setTruthy] = useState(true)
 
-  function handleTheTruth() {
-    setTruthy(intialTruth => !intialTruth)
-  }
-  //button needs to toggle between true adn false states, this function gets the job done  
+function handleClick() {
+  // console.log(truthy)
+  setTruthy(!truthy)
+}
 
   return (
-    <Card onClick={handleTheTruth} >
+    <Card>
       <div>
         <div className="image">
-          <img 
-          // best for setting the data with state 
-          src={truthy ? pokemon.sprites.front : pokemon.sprites.back}
-          alt={pokemon.name} />
+          <img onClick={handleClick} src={ truthy ? poke.sprites.front : poke.sprites.back} alt="oh no!" />
         </div>
         <div className="content">
-          <div className="header">{pokemon.name}</div>
+          <div className="header">{poke.name}</div>
         </div>
         <div className="extra content">
           <span>
             <i className="icon heartbeat red" />
-            {pokemon.hp}
+            {poke.hp}
           </span>
         </div>
       </div>

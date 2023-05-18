@@ -1340,6 +1340,33 @@
         "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
         "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/150.png"
       }
+    },
+    {
+      "name": "bulbasaur",
+      "hp": "50000",
+      "sprites": {
+        "front ": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
+      },
+      "id": 151
+    },
+    {
+      "name": "Abuela NO",
+      "hp": "12345",
+      "sprites": {
+        "front ": "https://i.redd.it/7k2154jlaw641.jpg",
+        "back": "https://watermark.lovepik.com/photo/20211209/large/lovepik-grandma-practicing-sword-in-the-park-in-her-later-picture_501701904.jpg"
+      },
+      "id": 152
+    },
+    {
+      "name": "NewBulba",
+      "hp": "50 ",
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
+      },
+      "id": 153
     }
   ]
 }

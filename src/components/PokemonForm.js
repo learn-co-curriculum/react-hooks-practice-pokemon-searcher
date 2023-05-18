@@ -1,51 +1,49 @@
 import React,{useState} from "react";
 import { Form } from "semantic-ui-react";
 
-function PokemonForm({ onNewPoke }) {
+function PokemonForm({ onPost }) {
   const intialForm = {
     "name" : "",
-    "hp" : 0,
-    "frontUrl" : "",
-    "backUrl" : ""
-    //use names they provide next time 
-    //resets forms
+     "hp" : "",
+     "frontUrl" : "",
+     "backUrl" : ""
   }
-  const [form , setForm] = useState(intialForm)
+const [form, setForm ] = useState(intialForm)
 
-  
-  function handlePOST(e){
-    e.preventDefault()
-    fetch('http://localhost:3001/pokemon', {
-      method: 'POST',
-      headers: { 'Content-Type' : 'application/json' },
-      body: JSON.stringify({
-        'name' : form.name,
-        'hp': form.hp,
-        'sprites': {'front': form.frontUrl, 'back': form.backUrl}
-})
-    })
-    .then(response => response.json())
-    .then(newPoke => {
-      onNewPoke(newPoke)
-    })
+  function handleSubmit() {
+        fetch(`http://localhost:3001/pokemon`,{
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                "name" : form.name,
+                "hp" : form.hp,
+                "sprites" : { "front" : form.frontUrl, "back" : form.backUrl }
+            })
+         })
+         .then((r) => r.json())
+         .then((data) => {
+          onPost(data)
+  })
+    setForm(intialForm)
   }
-  console.log(form)
-  
-    
+
   function handleChange(e) {
-    setForm({...form, [e.target.name] : e.target.value })
+    setForm({...form, 
+    [e.target.name] : e.target.value
+  })
   }
-
 
   return (
     <div>
       <h3>Add a Pokemon!</h3>
       <Form
-        onSubmit={handlePOST}
+        onSubmit={() => {handleSubmit()}}
       >
         <Form.Group widths="equal">
-          <Form.Input fluid label="Name" placeholder="Name" name="name" value={form.name} onChange={handleChange}/>
-          <Form.Input fluid label="hp" placeholder="hp" name="hp" value={form.hp} onChange={handleChange}/>
+          <Form.Input fluid label="Name" placeholder="Name" name="name" value={form.name} onChange={handleChange} />
+          <Form.Input fluid label="hp" placeholder="hp" name="hp" value={form.hp} onChange={handleChange} />
           <Form.Input
             fluid
             label="Front Image URL"
@@ -70,4 +68,3 @@ function PokemonForm({ onNewPoke }) {
 }
 
 export default PokemonForm;
-//site keeps breaking on POST
